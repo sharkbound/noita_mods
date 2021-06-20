@@ -86,23 +86,31 @@ function add_wands_to_player(player_entity)
 		end
     end
 
-    local main_wand = EntityLoad("mods/startingkit/files/opwand.xml", x, y)
-    AddGunAction(main_wand, "LIGHT_BULLET")
-    EntityAddChild(inv, main_wand)
+   
+    
+    local empty_wand = EntityLoad("mods/startingkit/files/opwand.xml", x, y)
+    EntityAddChild(inv, empty_wand)
+    
+    local empty_wand = EntityLoad("mods/startingkit/files/opwand.xml", x, y)
+    AddGunAction(empty_wand, "BLACK_HOLE")
+    EntityAddChild(inv, empty_wand)
 
     local explosive_wand = EntityLoad("mods/startingkit/files/opwand.xml", x, y)
-    AddGunAction(explosive_wand, "ROCKET")
-    AddGunAction(explosive_wand, "DYNAMITE")
-    AddGunAction(explosive_wand, "CHAINSAW")
-    AddGunAction(explosive_wand, "DIGGER")
+    AddGunAction(explosive_wand, "LUMINOUS_DRILL")
+    AddGunAction(explosive_wand, "BURST_2")
     AddGunAction(explosive_wand, "POWERDIGGER")
+    AddGunAction(explosive_wand, "CHAINSAW")
     EntityAddChild(inv, explosive_wand)  
     
-    local empty_wand = EntityLoad("mods/startingkit/files/opwand.xml", x, y)
-    EntityAddChild(inv, empty_wand)
-    
-    local empty_wand = EntityLoad("mods/startingkit/files/opwand.xml", x, y)
-    EntityAddChild(inv, empty_wand)
+    local main_wand = EntityLoad("mods/startingkit/files/opwand.xml", x, y)
+    AddGunAction(main_wand, "RECOIL_DAMPER")
+    AddGunAction(main_wand, "RECOIL_DAMPER")
+    AddGunAction(main_wand, "RECOIL_DAMPER")
+    AddGunAction(main_wand, "RECOIL_DAMPER")
+    AddGunAction(main_wand, "CHAINSAW")
+    AddGunAction(main_wand, "BURST_2")
+    AddGunAction(main_wand, "BUBBLESHOT")
+    EntityAddChild(inv, main_wand)
 end
 
 function OnPlayerSpawned(player_entity) -- This runs when player entity has been created
